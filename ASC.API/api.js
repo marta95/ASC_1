@@ -6,8 +6,8 @@ const logic = require('./controllers/conversion');
 router.get('/numbers', function (req, res) {
   const response = logic.all();
   
-  console.log(response.length);
-  console.log(response[3]);
+  //console.log(response.length);
+ // console.log(response[3]);
   res.send(response);
 });
 

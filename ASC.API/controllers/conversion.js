@@ -1,56 +1,74 @@
 
-var number2bcd8421 = function (...args) {
+var number2bcd8421 = function (args) {
+    var digits = args.toString().split('');
     const arrayOfDigits = [];
-    for (var i = 0; i < args.length; i++) {
-        if (args[i] === 0)
-            array.push("0000");
-        else if (args[i] === 1)
-            array.push("0001");
-        else if (args[i] === 2)
-            array.push("0010");
-        else if (args[i] === 3)
-            array.push("0011");
-        else if (args[i] === 4)
-            array.push("0100");
-        else if (args[i] === 5)
-            array.push("0101");
-        else if (args[i] === 6)
-            array.push("0110");
-        else if (args[i] === 7)
-            array.push("0111");
-        else if (args[i] === 8)
-            array.push("1000");
-        else if (args[i] === 9)
-            array.push("1001");
-        else if (args[i] === '.')
-            array.push(".");
-        else if (args[i] === '-')
-            array.push("0.");
+    if (digits[0] == "-") {
+        arrayOfDigits.push("1.");
+    } else {
+        arrayOfDigits.push("0.")
     }
+    for (var i = 0; i < digits.length; i++) {
+        if (digits[i] == 0)
+            arrayOfDigits.push("0000");
+        else if (digits[i] == 1)
+            arrayOfDigits.push("0001");
+        else if (digits[i] == 2)
+            arrayOfDigits.push("0010");
+        else if (digits[i] == 3)
+            arrayOfDigits.push("0011");
+        else if (digits[i] == 4)
+            arrayOfDigits.push("0100");
+        else if (digits[i] == 5)
+            arrayOfDigits.push("0101");
+        else if (digits[i] == 6)
+            arrayOfDigits.push("0110");
+        else if (digits[i] == 7)
+            arrayOfDigits.push("0111");
+        else if (digits[i] == 8)
+            arrayOfDigits.push("1000");
+        else if (digits[i] == 9)
+            arrayOfDigits.push("1001");
+        else if (digits[i] == '.')
+            arrayOfDigits.push(".");
+    }
+    console.log(arrayOfDigits);
     return arrayOfDigits.toString().split(" ");
 }
 
-var number2Excess3 = function (number) {
-    if (number === 0)
-        return "0011";
-    else if (number === 1)
-        return "0100";
-    else if (number === 2)
-        return "0101";
-    else if (number === 3)
-        return "0110";
-    else if (number === 4)
-        return "0111";
-    else if (number === 5)
-        return "1000";
-    else if (number === 6)
-        return "1001";
-    else if (number === 7)
-        return "1010";
-    else if (number === 8)
-        return "1011";
-    else if (number === 9)
-        return "1100";
+var number2Excess3 = function (args) {
+    var digits = args.toString().split('');
+    const arrayOfDigits = [];
+    if (digits[0] == "-") {
+        arrayOfDigits.push("1.");
+    } else {
+        arrayOfDigits.push("0.")
+    }
+    for (var i = 0; i < digits.length; i++) {
+        if (digits[i] == 0)
+            arrayOfDigits.push("0011");
+        else if (digits[i] == 1)
+            arrayOfDigits.push("0100");
+        else if (digits[i] == 2)
+            arrayOfDigits.push("0101");
+        else if (digits[i] == 3)
+            arrayOfDigits.push("0110");
+        else if (digits[i] == 4)
+            arrayOfDigits.push("0111");
+        else if (digits[i] == 5)
+            arrayOfDigits.push("1000");
+        else if (digits[i] == 6)
+            arrayOfDigits.push("1001");
+        else if (digits[i] == 7)
+            arrayOfDigits.push("1010");
+        else if (digits[i] == 8)
+            arrayOfDigits.push("1011");
+        else if (digits[i] == 9)
+            arrayOfDigits.push("1100");
+        else if (digits[i] == '.')
+            arrayOfDigits.push(".");
+    }
+    console.log(arrayOfDigits);
+    return arrayOfDigits.toString().split(" ");
 }
 
 var randomNumber = function (low, high) {
@@ -66,17 +84,6 @@ var adder = function (a, b) {
     return ((+a) + (+b)).toFixed(2);
 }
 
-const splitNumbers = function (a) {
-    var digits = a.toString().split('');
-    return digits;
-}
-
-const convert2bcd8421 = function (...args) {
-    var array
-    for (var i = 0; i < args.lenght; i++) {
-        console.log(args.lenght);
-    }
-}
 
 const all = function () {
     const a = generateNumber();
@@ -85,17 +92,19 @@ const all = function () {
     console.log(b);
     const add = adder(a, b);
     console.log(add);
-    const digits = splitNumbers(add);
-    console.log(digits);
-    const converted = convert2bcd8421(digits);
-    console.log(converted);
+    const digits = number2bcd8421(add);
+    const convertedEx = number2Excess3(add);
+    console.log("dupa2");
+    //console.log(digits);
+
 
     const array = [];
     array.push(a);
     array.push(b);
     array.push(add);
     array.push(digits);
-    array.push(converted);
+    array.push(convertedEx);
+    //array.push(converted);
     return array;
 }
 
@@ -105,7 +114,5 @@ module.exports = {
     adder: adder,
     randomNumber: randomNumber,
     generateNumber: generateNumber,
-    splitNumbers: splitNumbers,
-    convert2bcd8421: convert2bcd8421,
     all: all
 }
