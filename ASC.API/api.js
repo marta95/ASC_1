@@ -5,10 +5,12 @@ const logic = require('./controllers/conversion');
 // Home page route
 router.get('/numbers', function (req, res) {
   const response = logic.all();
+  console.log(response);
   
-  //console.log(response.length);
- // console.log(response[3]);
   res.send(response);
+  //const response = logic.all()
+ 
+
 });
 
 module.exports = router;
