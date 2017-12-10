@@ -293,6 +293,7 @@ const all = async function () {
         array.push(a);
         array.push(b);
         array.push(add);
+        array.push(convertToObjective);
         //array.push(digits);
         //array.push(convertedEx);
         //array.push(convertToModular);

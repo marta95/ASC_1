@@ -19,17 +19,26 @@ export default class Test extends React.Component {
 
     fetch() {
         this.setState({ isReady: false });
+        console.log("sdsf");
         RestClient.getNumbers().then(response => {
+            console.log("dsfs");
             this.setState({
-                number : response.data,
-                isReady :true
+                number: response.data,
+                isReady: true
             });
         });
     }
 
     render() {
-        return (<div class="test">
-            <h1>{this.state.number}</h1>
-        </div>);
+        return (
+            <div>{
+                this.state.isReady ?
+                    console.log(this.state.number) :
+                    this.state.number.map(number => {
+                        return
+                        <h1>{number.numb}</h1>
+                    })
+          }</div>);
     }
+
 }
