@@ -148,7 +148,6 @@ const preperToOpposite = async function (args) {
                     arrayConverted.push("1.");
             }
         }
-        //console.log(arrayConverted);
         resolve(arrayConverted);
     });
 }
@@ -272,9 +271,9 @@ const objectiveRecord = async function (args) {
 
 const all = async function () {
     try {
-        const a = generateNumber();
+        //const a = generateNumber();
         //console.log(a);
-        const b = generateNumber();
+        //const b = generateNumber();
         //  console.log(b);
         const add = adder(a, b);
         // console.log(add);

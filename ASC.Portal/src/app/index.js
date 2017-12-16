@@ -1,5 +1,6 @@
-import Test from './components/test';
+import App from './components/app';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import RestClient from './common/RestClient.js';
 
-ReactDOM.render(<Test />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));

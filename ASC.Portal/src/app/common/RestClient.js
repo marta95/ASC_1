@@ -17,9 +17,11 @@ const RestClient = (() => {
         return axios.post(apiPath + url, data);
     };
 
-    const getNumbers = () => {
-        return doGet('/numbers');
+    
+    const getNumbers = (params) => {
+        return doGet('/numbers',params);
     }
+
 
     return{
         getNumbers: getNumbers,
