@@ -1,5 +1,5 @@
 import React from 'react';
-import RestClient from '../common/RestClient';
+import RestClient from '../common/restClient';
 
 export default class Homepage extends React.Component {
     

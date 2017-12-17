@@ -1,7 +1,7 @@
 import React from 'react';
-import RestClient from '../common/RestClient';
+import RestClient from '../common/restClient';
 import Homepage from './homepage';
-import Practise8421 from './Practise8421';
+import Practise8421 from './practise8421';
 
 export default class App extends React.Component {
 
