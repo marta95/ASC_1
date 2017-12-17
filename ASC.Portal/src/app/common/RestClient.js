@@ -22,8 +22,12 @@ const RestClient = (() => {
         return doGet('/numbers', params);
     }
 
-    const postNumbers = (a,b) => {
+    const get8421 = (a,b) => {
         return doGet('/toAdd', {a: a, b: b});
+    }
+
+    const getExcess = (a,b) => {
+        return doGet('/toExcess', {a: a, b: b});
     }
 
     const getResult=()=>{
@@ -32,7 +36,8 @@ const RestClient = (() => {
 
     return {
         getNumbers: getNumbers,
-        postNumbers: postNumbers,
+        get8421: get8421,
+        getExcess: getExcess,
     };
 })();
 
