@@ -15,6 +15,7 @@ export default class Practise8421 extends React.Component {
         }
         this.fetch = this.fetch.bind(this);
         this.show8421 = this.show8421.bind(this);
+        this.showExcess = this.showExcess.bind(this);
         this.generateNumber = this.generateNumber.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
     }
@@ -38,9 +39,23 @@ export default class Practise8421 extends React.Component {
         this.setState({ valueOfInput: value });
     }
 
+    checkModular(){
+
+    }
     show8421(){
         document.querySelector('.input-wrapper').style.display = 'inline';
-        RestClient.postNumbers(this.state.augend, this.state.addend).then((response) => {
+        RestClient.get8421(this.state.augend, this.state.addend).then((response) => { 
+            
+            this.setState({
+                isReady: true
+            });
+            //console.log(response);
+        });
+    }
+
+    showExcess(){
+        document.querySelector('.input-wrapper').style.display = 'inline';
+        RestClient.getExcess(this.state.augend, this.state.addend).then((response) => {
             this.setState({
                 isReady: true
             });
@@ -54,6 +69,8 @@ export default class Practise8421 extends React.Component {
         return (
             <div>
                 <button onClick={this.show8421}>8421</button>
+                
+                <button onClick={this.showExcess}>Excess-3</button>
             <div class="input-wrapper">{
                 <h1>{this.state.augend}</h1>
             }
